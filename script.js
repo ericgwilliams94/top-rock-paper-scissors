@@ -1,4 +1,4 @@
-const COMPCHOICE = -1
+var COMPCHOICE = -1;
 
 function computerPlay () {
     var choice = Math.floor(Math.random() * 3)
@@ -17,7 +17,7 @@ function computerPlay () {
 computerPlay()
 
 
-function playRound(playerSelection, COMPCHOICE) {
+function playRound(playerSelection, computerSelection) {
 	if (playerSelection.toLowerCase() == 'paper' && computerSelection.toLowerCase() == 'scissors') {
   return 'Loser'
   }
@@ -44,4 +44,10 @@ function playRound(playerSelection, COMPCHOICE) {
   }
 }
 
-playRound('paper', COMPCHOICE);
+function game() {
+    for (let i = 0; i < 5; i++) {
+        playRound('paper', COMPCHOICE)
+    }
+}
+
+console.log(game())
