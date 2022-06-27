@@ -16,6 +16,10 @@
 }
 
 .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
 }
 
@@ -23,6 +27,6 @@ h1 {
     color: var(--orange);
     font-family: 'Roboto', sans-serif;
     font-size: 48px;
-    padding-bottom: 10px;
+    padding: 10px;
 }
 
