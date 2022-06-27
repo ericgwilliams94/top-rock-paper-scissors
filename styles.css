@@ -1,0 +1,28 @@
+/* colors */
+
+:root {
+    --darkblue: #26303A;
+    --cream: #F7D9B1;
+    --orange: #FA6A2F;
+
+}
+
+* {
+    background-color: var(--darkblue);
+    color: var(--cream);
+    font-family: 'Robot Mono', monospace;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+}
+
+h1 {
+    color: var(--orange);
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+    padding-bottom: 10px;
+}
+
