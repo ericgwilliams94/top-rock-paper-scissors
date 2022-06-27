@@ -1,4 +1,23 @@
-function playRound(playerSelection, computerSelection) {
+const COMPCHOICE = -1
+
+function computerPlay () {
+    var choice = Math.floor(Math.random() * 3)
+
+    if (choice == 0) {
+        COMPCHOICE = 'rock'
+    }
+    else if (choice = 1) {
+        COMPCHOICE = 'paper'
+    }
+    else {
+        COMPCHOICE = 'scissors'
+    }
+}
+
+computerPlay()
+
+
+function playRound(playerSelection, COMPCHOICE) {
 	if (playerSelection.toLowerCase() == 'paper' && computerSelection.toLowerCase() == 'scissors') {
   return 'Loser'
   }
@@ -25,4 +44,4 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-playRound('paper', 'SCISSORS');
+playRound('paper', COMPCHOICE);
