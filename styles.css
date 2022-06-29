@@ -27,6 +27,23 @@ h1 {
     color: var(--orange);
     font-family: 'Roboto', sans-serif;
     font-size: 48px;
-    padding: 10px;
+    padding: 100px 20px 10px 20px;
 }
 
+.scores {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 25px 0;
+    width: 50%;
+}
+
+h4 {
+    color: #FFF;
+}
+
+#choice div {
+    border: 2px solid salmon;
+    height: 50px;
+    width: 50px;
+}
