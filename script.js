@@ -1,3 +1,8 @@
+// document variables
+const container = document.getElementsByClassName("container");
+
+
+// function for computer selection
 var COMPCHOICE;
 
 function computerPlay () {
@@ -14,6 +19,7 @@ function computerPlay () {
     }
 }
 
+// function to play round
 function playRound(playerSelection, computerSelection) {
 	if (playerSelection.toLowerCase() == 'paper' && computerSelection.toLowerCase() == 'scissors') {
   return 'You lose! Scissors beats paper!';
@@ -39,14 +45,6 @@ function playRound(playerSelection, computerSelection) {
   else {
   return 'Invalid responses';
   }
-}
-
-function game() {
-    for (let i = 0; i < 5; i++) {
-        var userPlay = prompt("Rock, paper, or scissors? ")
-        computerPlay();
-        console.log(playRound(userPlay.toLowerCase(), COMPCHOICE));
-    }
 }
 
 // game();

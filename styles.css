@@ -15,6 +15,22 @@
     padding: 0;
 }
 
+h1 {
+    color: var(--orange);
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+    padding: 100px 20px 10px 20px;
+}
+
+h3 {
+    color: var(--orange);
+    margin: 10px 0 25px 0;
+}
+
+h4 {
+    color: #FFF;
+}
+
 .container {
     align-items: center;
     display: flex;
@@ -23,23 +39,12 @@
     width: 100%;
 }
 
-h1 {
-    color: var(--orange);
-    font-family: 'Roboto', sans-serif;
-    font-size: 48px;
-    padding: 100px 20px 10px 20px;
-}
-
 .scores {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     text-align: center;
-    padding: 25px 0;
+    padding: 50px;
     width: 50%;
-}
-
-h4 {
-    color: #FFF;
 }
 
 .choices {
@@ -47,3 +52,10 @@ h4 {
     flex-direction: row;
     gap: 0 50px;
 }
+
+.btn-choice {
+    border-style: none;
+    font-size: 48px;
+    margin-bottom: 25px;
+}
+
