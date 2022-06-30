@@ -1,5 +1,11 @@
 // document variables
 const container = document.getElementsByClassName("container");
+const gameResult = document.getElementsByClassName("gameResult");
+const playAgain = document.getElementById("playAgain");
+
+// variables for functions
+var userScore = 0;
+var compScore = 0;
 
 
 // function for computer selection
@@ -46,5 +52,30 @@ function playRound(playerSelection, computerSelection) {
   return 'Invalid responses';
   }
 }
+
+// player select
+const userPlay = document.querySelectorAll("#btn-choice");
+userPlay.onclick = () => alert('BUTTON CLICKED');
+
+// function to check for a winner
+function isWinner() {
+    if (userScore == 5  || compScore == 5) {
+        /* 
+        declare winner
+        show play again button
+        */
+    }
+}
+
+// play again function
+function anotherOne() {
+    userScore = 0;
+    compScore = 0;
+    alert('Playing again');
+}
+
+// play again button
+const btnPlayAgain = document.getElementById("btn-play-again");
+btnPlayAgain.onclick = () => anotherOne();
 
 // game();
