@@ -71,7 +71,9 @@ function isWinner() {
 function anotherOne() {
     userScore = 0;
     compScore = 0;
-    alert('Playing again');
+    computerPlay();
+    var userP = prompt('Rock, paper, or scissors? ');
+    console.log(playRound(userP, COMPCHOICE));
 }
 
 // play again button
