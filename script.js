@@ -29,24 +29,30 @@ function computerPlay () {
 function playRound(playerSelection, computerSelection) {
 	if (playerSelection.toLowerCase() == 'paper' && computerSelection.toLowerCase() == 'scissors') {
   return 'You lose! Scissors beats paper!';
+  compScore += 1;
   }
   else if (playerSelection.toLowerCase() == 'paper' && computerSelection.toLowerCase() == 'rock') {
   return 'You win! Paper beats rock!';
+  userScore += 1;
   }
   else if (playerSelection.toLowerCase() == 'scissors' && computerSelection.toLowerCase() == 'paper') {
   return 'You win! Scissors beats paper!';
+  userScore += 1;
   }
   else if (playerSelection.toLowerCase() == 'scissors' && computerSelection.toLowerCase() == 'rock') {
   return 'You lose! Rock beats scissors!';
+  compScore += 1;
   }
   else if (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
   return 'Tie! You and the computer selected the same!';
   }
   else if (playerSelection.toLowerCase() == 'rock' && computerSelection.toLowerCase() == 'scissors') {
   return 'You win! Rock beats scissors!';
+  userScore += 1;
   }
   else if (playerSelection.toLowerCase() == 'rock' && computerSelection.toLowerCase() == 'paper') {
   return 'You lose! Paper beats rock!';
+  compScore += 1;
   }
   else {
   return 'Invalid responses';
@@ -69,15 +75,23 @@ function isWinner() {
 
 // play again function
 function anotherOne() {
-    userScore = 0;
-    compScore = 0;
-    computerPlay();
-    var userP = prompt('Rock, paper, or scissors? ');
-    console.log(playRound(userP, COMPCHOICE));
+    // reset scores
+    userScore, compScore = 0;
+    // update scores on screen
+    // run game script
 }
 
 // play again button
 const btnPlayAgain = document.getElementById("btn-play-again");
 btnPlayAgain.onclick = () => anotherOne();
 
-// game();
+/* 
+while user score or compuer score not equal to 5
+listen for user selection,
+generate comp selection & play game,
+display result and add score approriately
+check for winner, display winner if met
+*/
+function game() {
+    return 'Waiting for input...';
+}
