@@ -2,11 +2,14 @@
 const gameInfo = document.getElementById("gameInfo");
 const gameMessage = document.getElementById("gameMessage");
 const playerScore = document.getElementById("playerScore");
-const compScore = document.getElementById("compScore");)
+const compScore = document.getElementById("compScore");
+const rockBtn = document.getElementById("rock-btn");
+const scissorsBtn = document.getElementById("scissors-btn");
+const paperBtn = document.getElementById("paper-btn");
 
 // variables for functions
 var userScore = 0;
-var compScore = 0;
+var computerScore = 0;
 var gameResult = "";
 
 
@@ -50,8 +53,13 @@ function playRound(playerSelection, computerSelection) {
     updateMessage(gameResult, playerSelection, computerSelection);
 }
 
-// function to update score
-function updateScore() {
+// function to check for winner
+function isWinner() {
+    return (userScore == 5 || compScore == 5);
+}
+
+// function to update screen on who won
+function gameWinnerMessage() {
     if (gameResult == "Tie") {
         gameInfo.textContent("It's a tie!");
     }
@@ -62,3 +70,5 @@ function updateScore() {
         gameInfo.textContent("You lose... 👎")
     }
 }
+
+
