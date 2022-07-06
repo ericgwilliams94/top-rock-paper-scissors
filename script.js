@@ -1,15 +1,13 @@
 // document variables
-const container = document.getElementsByClassName("container");
-const gameResult = document.getElementsByClassName("gameResult");
-const playAgain = document.getElementById("playAgain");
-const rock = document.getElementById("rock");
-const paper = document.getElementById("paper");
-const scissors = document.getElementById("scissors");
+const gameInfo = document.getElementById("gameInfo");
+const gameMessage = document.getElementById("gameMessage");
+const playerScore = document.getElementById("playerScore");
+const compScore = document.getElementById("compScore");)
 
 // variables for functions
 var userScore = 0;
 var compScore = 0;
-var gameMsg;
+var gameResult = "";
 
 
 // function for computer selection
@@ -33,20 +31,34 @@ function computerPlay () {
 function playRound(playerSelection, computerSelection) {
 	// declare tie
     if (playerSelection == computerSelection) {
-        message ="Tie";
+        gameResult = "Tie";
     }
     // player wins
     if (playerSelection == "rock" && computerSelection == "scissors" ||
     playerSelection == "paper" && computerSelection == "rock" ||
     playerSelection == "scissors" && computerSelection == "paper") {
-        var message = "You win!";
+        gameResult = "Player";
         userScore += 1
     }
     // computer wins
     if (playerSelection == "rock" && computerSelection == "paper" ||
     playerSelection == "paper" && computerSelection == "scissors" ||
     playerSelection == "scissors" && computerSelection == "rock") {
-        var message = "You lose!";
+        gameResult ="Computer";
         compScore += 1;
+    }
+    updateMessage(gameResult, playerSelection, computerSelection);
+}
+
+// function to update score
+function updateScore() {
+    if (gameResult == "Tie") {
+        gameInfo.textContent("It's a tie!");
+    }
+    else if (gameResult == "Player") {
+        gameInfo.textContent("WINNER! 👍 ")
+    }
+    else {
+        gameInfo.textContent("You lose... 👎")
     }
 }
