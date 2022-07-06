@@ -2,6 +2,9 @@
 const container = document.getElementsByClassName("container");
 const gameResult = document.getElementsByClassName("gameResult");
 const playAgain = document.getElementById("playAgain");
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
 
 // variables for functions
 var userScore = 0;
@@ -60,8 +63,9 @@ function playRound(playerSelection, computerSelection) {
 }
 
 // player select
-const userPlay = document.querySelectorAll("#btn-choice");
-userPlay.onclick = () => alert('BUTTON CLICKED');
+rock.onclick = () => alert('ROCK CLICKED');
+paper.onclick = () => alert('PAPER CLICKED');
+scissors.onclick = () => alert('SCISSORS CLICKED');
 
 // function to check for a winner
 function isWinner() {

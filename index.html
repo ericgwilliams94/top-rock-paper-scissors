@@ -16,33 +16,34 @@
 
     <body>
         <div class="container">
-            <h1>Rock, Paper, Scissors vs. a 'Computer'</h1>
+            <div class="title">
+                <h1>Rock Paper Scisors</h1>
+            </div>
 
-            <p>First to FIVE wins! Select your choice below!</p>
+            <div class="gameMessage">
+                <h2>Click on your choice below!</h2>
+                <h3>First to FIVE wins!</h3>
+            </div>
 
-            <div class="scores">
+            <div class="scoreboard">
                 <div id="userScore">
                     <p>Your Score:</p>
-                    <h4>0</h4>
+                    <h4 class="score" id="playerScore">0</h4>
                 </div>
                 <div id="compScore">
                     <p>Computer Score:</p>
-                    <h4>0</h4>
+                    <h4 class="score" id="compScore">0</h4>
                 </div>
             </div>
 
-            <div class="gameResult">
-                
-            </div>
-
             <div class="choices">
-                <div class="choice"><button class="btn-choice"  id="rock">✊</button></div>
-                <div class="choice"><button class="btn-choice" id="paper">🤚</button></div>
-                <div class="choice" id="scissors"><button class="btn-choice" id="scissors">✌</button></div>
+                <button class="btn-choice" id="rock-btn"><div>🗿</div></button>
+                <button class="btn-choice" id="paper-btn"><div>📄</div></button>
+                <button class="btn-choice" id="scissors-btn"><div>✂️</div></button>
             </div>
 
             <div id="playAgain">
-                <button id="btn-play-again">Play Again?</button>
+                <button id="play-again-btn">Play Again?</button>
             </div>
 
         </div>
