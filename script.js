@@ -6,6 +6,8 @@ const compScore = document.getElementById("compScore");
 const rockBtn = document.getElementById("rock-btn");
 const scissorsBtn = document.getElementById("scissors-btn");
 const paperBtn = document.getElementById("paper-btn");
+const playAgainDiv = document.getElementById("playAgain");
+const playAgainBtn = document.getElementById("play-again-btn");
 
 // variables for functions
 var userScore = 0;
@@ -13,20 +15,17 @@ var computerScore = 0;
 var gameResult = "";
 
 
-// function for computer selection
-var COMPCHOICE;
-
 function computerPlay () {
     var choice = Math.floor(Math.random() * 3)
 
     if (choice == 0) {
-        COMPCHOICE = 'rock'
+        compChoice = 'rock'
     }
     else if (choice == 1) {
-        COMPCHOICE = 'paper'
+        compChoice = 'paper'
     }
     else if (choice == 2) {
-        COMPCHOICE = 'scissors'
+        compChoice = 'scissors'
     }
 }
 
@@ -50,7 +49,7 @@ function playRound(playerSelection, computerSelection) {
         gameResult ="Computer";
         compScore += 1;
     }
-    updateMessage(gameResult, playerSelection, computerSelection);
+    gameResultMessage(gameResult, playerSelection, computerSelection);
 }
 
 // function to check for winner
@@ -69,6 +68,47 @@ function gameWinnerMessage() {
     else {
         gameInfo.textContent("You lose... 👎")
     }
+
+    playerScore.textContent("${userScore}");
+    compScore.textContent("${computerScore}");
+}
+
+// function to display game result
+function gameResultMessage(gameResult, playerSelection, computerSelection) {
+    if (gameResult == "Player") {
+        gameMessage.textContent("${playerSelection.toUpperCase()} beats ${computerSelection}");
+        return 0;
+    }
+
+    if (gameResult == "Computer") {
+        gameMessage.textContent("${computerSelection.toUpperCase()} beats ${playerSelection");
+        return -1;
+    }
+
+    gameMessage.textContent("${computerSelection.toUpperCase()} ties ${playerSelection");
+}
+
+// listeners
+rockBtn.addEventListener("click", () => game("rock"));
+scissorsBtn.addEventListener("click", () => game("scissors"));
+paperBtn.addEventListener("click", () => game("paper"));
+
+// final game
+
+function game(playerSelection) {
+    // see if someone won
+    if (isWinner()) {
+        // display play again button
+        playAgainDiv.style.visibility = "visible";
+    }
+    // make computer select
+    const compChoice = computerPlay();
+    // play a round
+    playRound(playerSelection, compChoice);
+    // show result
+    gameWinnerMessage();
+
+
 }
 
 
