@@ -65,12 +65,20 @@ h4 {
     gap: 0 50px;
 }
 
+button {
+    cursor: pointer;
+}
+
 .btn-choice {
     border: 3px solid var(--orange);
     border-radius: 8px;
     font-size: 48px;
     margin-bottom: 25px;
     padding: 15px 20px;
+}
+
+.btn-choice:hover {
+    background-color: var(--orange);
 }
 
 

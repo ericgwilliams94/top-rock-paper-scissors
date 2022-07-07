@@ -19,13 +19,13 @@ function computerPlay () {
     var choice = Math.floor(Math.random() * 3)
 
     if (choice == 0) {
-        compChoice = 'rock'
+        return "rock";
     }
     else if (choice == 1) {
-        compChoice = 'paper'
+        return "paper";
     }
     else if (choice == 2) {
-        compChoice = 'scissors'
+        return "scissors";
     }
 }
 
@@ -40,14 +40,14 @@ function playRound(playerSelection, computerSelection) {
     playerSelection == "paper" && computerSelection == "rock" ||
     playerSelection == "scissors" && computerSelection == "paper") {
         gameResult = "Player";
-        userScore += 1
+        userScore++;
     }
     // computer wins
     if (playerSelection == "rock" && computerSelection == "paper" ||
     playerSelection == "paper" && computerSelection == "scissors" ||
     playerSelection == "scissors" && computerSelection == "rock") {
-        gameResult ="Computer";
-        compScore += 1;
+        gameResult = "Computer";
+        computerScore++;
     }
     gameResultMessage(gameResult, playerSelection, computerSelection);
 }
@@ -60,32 +60,31 @@ function isWinner() {
 // function to update screen on who won
 function gameWinnerMessage() {
     if (gameResult == "Tie") {
-        gameInfo.textContent("It's a tie!");
+        gameInfo.textContent = "It's a tie!";
     }
     else if (gameResult == "Player") {
-        gameInfo.textContent("WINNER! 👍 ")
+        gameInfo.textContent = "WINNER! 👍 ";
     }
     else {
-        gameInfo.textContent("You lose... 👎")
+        gameInfo.textContent = "You lose... 👎";
     }
 
-    playerScore.textContent("${userScore}");
-    compScore.textContent("${computerScore}");
+    playerScore.textContent = `${userScore}`;
+    compScore.textContent = `${computerScore}`;
 }
 
 // function to display game result
 function gameResultMessage(gameResult, playerSelection, computerSelection) {
     if (gameResult == "Player") {
-        gameMessage.textContent("${playerSelection.toUpperCase()} beats ${computerSelection}");
+        gameMessage.textContent = `${playerSelection} beats ${computerSelection}`;
         return 0;
     }
 
     if (gameResult == "Computer") {
-        gameMessage.textContent("${computerSelection.toUpperCase()} beats ${playerSelection");
+        gameMessage.textContent = `${computerSelection} beats your ${playerSelection}`;
         return -1;
     }
-
-    gameMessage.textContent("${computerSelection.toUpperCase()} ties ${playerSelection");
+    gameMessage.textContent = `${computerSelection} ties ${playerSelection}`;
 }
 
 // listeners
@@ -93,11 +92,27 @@ rockBtn.addEventListener("click", () => game("rock"));
 scissorsBtn.addEventListener("click", () => game("scissors"));
 paperBtn.addEventListener("click", () => game("paper"));
 
+// play again functionality
+playAgainBtn.addEventListener("click", () => resetGame());
+
+function resetGame() {
+    playAgainDiv.style.visibility = "hidden";
+}
+
 // final game
 
 function game(playerSelection) {
     // see if someone won
     if (isWinner()) {
+        // declare winner / loser
+        if (userScore == 5) {
+            gameInfo.textContent = "🥳 CONGRATULATIONS, YOU WON! ";
+            gameMessage.textContent = "Click play again below if you want to go again!";
+        }
+        else {
+            gameInfo.textContent = "😔 You lost to the computer.";
+            gameMessage.textContent = "Click play again below if you want to go again!";
+        }
         // display play again button
         playAgainDiv.style.visibility = "visible";
     }
@@ -107,6 +122,20 @@ function game(playerSelection) {
     playRound(playerSelection, compChoice);
     // show result
     gameWinnerMessage();
+
+    iif (isWinner()) {
+        // declare winner / loser
+        if (userScore == 5) {
+            gameInfo.textContent = "🥳 CONGRATULATIONS, YOU WON! ";
+            gameMessage.textContent = "Click play again below if you want to go again!";
+        }
+        else {
+            gameInfo.textContent = "😔 You lost to the computer.";
+            gameMessage.textContent = "Click play again below if you want to go again!";
+        }
+        // display play again button
+        playAgainDiv.style.visibility = "visible";
+    }
 
 
 }
