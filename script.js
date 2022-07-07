@@ -54,7 +54,7 @@ function playRound(playerSelection, computerSelection) {
 
 // function to check for winner
 function isWinner() {
-    return (userScore == 5 || compScore == 5);
+    return (userScore == 5 || computerScore == 5);
 }
 
 // function to update screen on who won
@@ -96,7 +96,16 @@ paperBtn.addEventListener("click", () => game("paper"));
 playAgainBtn.addEventListener("click", () => resetGame());
 
 function resetGame() {
+    // hide button
     playAgainDiv.style.visibility = "hidden";
+    // reset scores
+    userScore = 0;
+    computerScore = 0;
+    playerScore.textContent = `${userScore}`;
+    compScore.textContent = `${computerScore}`;
+    // reset text
+    gameInfo.textContent = "Click your choice below!";
+    gameMessage.textContent = "First to FIVE wins!";
 }
 
 // final game
@@ -123,7 +132,7 @@ function game(playerSelection) {
     // show result
     gameWinnerMessage();
 
-    iif (isWinner()) {
+    if (isWinner()) {
         // declare winner / loser
         if (userScore == 5) {
             gameInfo.textContent = "🥳 CONGRATULATIONS, YOU WON! ";
