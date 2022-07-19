@@ -10,6 +10,6 @@ From scratch, create a web page in which users can play rock, paper, scissors ag
 * Game is played
 * First to five wins
 
-Here is a [live preview.](https://ericgwilliams94.github.io/top-rock-paper-scissors/)
+Here is a [live preview](https://ericgwilliams94.github.io/top-rock-paper-scissors/) for you to play the game.
 
 ![Alt text](https://media.giphy.com/media/EAKDPd7DqvHRqAepEB/giphy.gif)
